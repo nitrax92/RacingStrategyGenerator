@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 import java.io.*;
+import java.util.Scanner;
 
 /**
  * Created by Mello on 20.12.2016.
@@ -27,8 +28,26 @@ public class Controller {
 
         writer.flush();
         writer.close();
+    }
 
 
+    @FXML
+    public void readButton(ActionEvent event) throws IOException{
+        System.out.println("************************ READ ****************************");
+        String filename = "saved_data\\01.csv";
+        File file = new File(filename);
+        try{
+            Scanner inputStream = new Scanner(file);
+            while(inputStream.hasNext()){
+                String data = inputStream.next();
+                System.out.println(data);
+            }
+            inputStream.close();
+
+
+        } catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
 
     }
 

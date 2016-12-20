@@ -15,5 +15,6 @@
       <TextField fx:id="session_name" layoutX="226.0" layoutY="125.0" />
       <Label layoutX="130.0" layoutY="129.0" text="Session Name" />
       <Button layoutX="226.0" layoutY="188.0" mnemonicParsing="false" onAction="#nextButton" text="Next" />
+      <Button layoutX="221.0" layoutY="254.0" mnemonicParsing="false" onAction="#readButton" text="Read" />
    </children>
 </AnchorPane>
