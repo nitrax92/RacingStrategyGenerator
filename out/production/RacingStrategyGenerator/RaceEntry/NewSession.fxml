@@ -5,6 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.collections.FXCollections?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RaceEntry.Controller">
    <children>
       <Label layoutX="130.0" layoutY="14.0" prefHeight="58.0" prefWidth="340.0" text="New Session">
@@ -15,6 +16,27 @@
       <TextField fx:id="session_name" layoutX="226.0" layoutY="125.0" />
       <Label layoutX="130.0" layoutY="129.0" text="Session Name" />
       <Button layoutX="226.0" layoutY="188.0" mnemonicParsing="false" onAction="#nextButton" text="Next" />
-      <Button layoutX="221.0" layoutY="254.0" mnemonicParsing="false" onAction="#readButton" text="Read" />
+      <Button layoutX="225.0" layoutY="213.0" mnemonicParsing="false" onAction="#readButton" text="Read" />
+      <TextField layoutX="226.0" layoutY="265.0" />
+      <Button layoutX="226.0" layoutY="298.0" mnemonicParsing="false" onAction="#searchButton" text="Search" />
+      <MenuButton layoutX="106.0" layoutY="265.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0">
+        <items>
+          <MenuItem mnemonicParsing="false" text="SS" />
+          <MenuItem mnemonicParsing="false" text="S" />
+            <MenuItem mnemonicParsing="false" text="M" />
+            <MenuItem mnemonicParsing="false" text="H" />
+        </items>
+      </MenuButton>
+      <DatePicker layoutX="361.0" layoutY="226.0" />
+      <ChoiceBox value="2 minutes">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="2 minutes" />
+               <String fx:value="5 minutes" />
+               <String fx:value="15 minutes" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+
    </children>
 </AnchorPane>
