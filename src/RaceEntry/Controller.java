@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
@@ -83,6 +84,48 @@ public class Controller {
             }
 
         }
+    }
+
+
+
+
+
+
+    /* LOAD SESSION */
+    public void buttonLoad(ActionEvent event) throws IOException, FileNotFoundException{
+        System.out.println("Load Something..");
+        FileChooser fc = new FileChooser();
+
+
+        // Extention Filter on file chooser
+        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.csv");
+        fc.getExtensionFilters().add(filter);
+
+
+        File selectedFiles = fc.showOpenDialog(null);
+
+
+        if(selectedFiles != null){
+            String filename = selectedFiles.getAbsoluteFile().toString();
+            File file = new File(filename);
+            CSVReader reader = new CSVReader(new FileReader(file));
+            String [] nextLine;
+
+            while ((nextLine = reader.readNext()) != null) {
+                if(nextLine != null){
+                    String s = Arrays.toString(nextLine);
+                    if(nextLine[0].equals("S")){
+                        System.out.println("Hit!");
+                        System.out.println(Arrays.toString(nextLine));
+                    }
+                }
+
+            }
+
+        } else {
+
+        }
+
     }
 
 

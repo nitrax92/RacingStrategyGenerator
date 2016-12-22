@@ -26,4 +26,16 @@ public class Controller {
         app_stage.show();
     }
 
+    public void existingRaceButton(ActionEvent event) throws IOException{
+        Parent new_page_parent = FXMLLoader.load(getClass().getResource("../RaceEntry/LoadSession.fxml"));
+        Scene new_page_scene = new Scene(new_page_parent);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setTitle("Load Session");
+        app_stage.setScene(new_page_scene);
+        app_stage.show();
+    }
+
+
+
+
 }
